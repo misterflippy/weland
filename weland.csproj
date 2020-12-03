@@ -1,0 +1,261 @@
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{1A6BCB3D-FEA9-49E5-8EC7-A6487DFD8E46}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>Weland</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>Weland</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Weland.Weland</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icons\Weland.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f, processorArchitecture=MSIL" />
+    <Reference Include="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f, processorArchitecture=MSIL" />
+    <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f, processorArchitecture=MSIL" />
+    <Reference Include="gtk-dotnet, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f, processorArchitecture=MSIL" />
+    <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f, processorArchitecture=MSIL" />
+    <Reference Include="Mono.Cairo, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL" />
+    <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assembly.cs" />
+    <Compile Include="BinaryReaderBE.cs" />
+    <Compile Include="BinaryWriterBE.cs" />
+    <Compile Include="CrcStream.cs" />
+    <Compile Include="Drawer.cs" />
+    <Compile Include="Editor.cs" />
+    <Compile Include="Geometry.cs" />
+    <Compile Include="gtk-sharp\CairoDrawer.cs" />
+    <Compile Include="gtk-sharp\GdkDrawer.cs" />
+    <Compile Include="gtk-sharp\ImageUtilities.cs" />
+    <Compile Include="gtk-sharp\Inspector.cs" />
+    <Compile Include="gtk-sharp\LevelParametersDialog.cs" />
+    <Compile Include="gtk-sharp\LightParametersDialog.cs" />
+    <Compile Include="gtk-sharp\MapDrawingArea.cs" />
+    <Compile Include="gtk-sharp\MapWindow.cs" />
+    <Compile Include="gtk-sharp\MediaParametersDialog.cs" />
+    <Compile Include="gtk-sharp\ParametersDialogs.cs" />
+    <Compile Include="gtk-sharp\PlatformParametersDialog.cs" />
+    <Compile Include="gtk-sharp\PopupParametersDialogs.cs" />
+    <Compile Include="gtk-sharp\PreferencesDialog.cs" />
+    <Compile Include="gtk-sharp\SoundParametersDialogs.cs" />
+    <Compile Include="gtk-sharp\SystemDrawer.cs" />
+    <Compile Include="gtk-sharp\TexturePalette.cs" />
+    <Compile Include="gtk-sharp\Widgets.cs" />
+    <Compile Include="level\Annotation.cs" />
+    <Compile Include="level\Level.cs" />
+    <Compile Include="level\Light.cs" />
+    <Compile Include="level\Line.cs" />
+    <Compile Include="level\MapFile.cs" />
+    <Compile Include="level\MapInfo.cs" />
+    <Compile Include="level\MapObject.cs" />
+    <Compile Include="level\Media.cs" />
+    <Compile Include="level\OBJExporter.cs" />
+    <Compile Include="level\Platform.cs" />
+    <Compile Include="level\Point.cs" />
+    <Compile Include="level\Polygon.cs" />
+    <Compile Include="level\Side.cs" />
+    <Compile Include="level\Sounds.cs" />
+    <Compile Include="mac\IgeMacMenu.cs" />
+    <Compile Include="mac\IgeMacMenuGroup.cs" />
+    <Compile Include="Plugins.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="shapes\Bitmap.cs" />
+    <Compile Include="shapes\Collection.cs" />
+    <Compile Include="shapes\ShapeDescriptor.cs" />
+    <Compile Include="shapes\ShapesFile.cs" />
+    <Compile Include="Wadfile.cs" />
+    <Compile Include="Weland.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".git\config" />
+    <None Include=".git\description" />
+    <None Include=".git\HEAD" />
+    <None Include=".git\hooks\applypatch-msg.sample" />
+    <None Include=".git\hooks\commit-msg.sample" />
+    <None Include=".git\hooks\fsmonitor-watchman.sample" />
+    <None Include=".git\hooks\post-update.sample" />
+    <None Include=".git\hooks\pre-applypatch.sample" />
+    <None Include=".git\hooks\pre-commit.sample" />
+    <None Include=".git\hooks\pre-merge-commit.sample" />
+    <None Include=".git\hooks\pre-push.sample" />
+    <None Include=".git\hooks\pre-rebase.sample" />
+    <None Include=".git\hooks\pre-receive.sample" />
+    <None Include=".git\hooks\prepare-commit-msg.sample" />
+    <None Include=".git\hooks\update.sample" />
+    <None Include=".git\index" />
+    <None Include=".git\info\exclude" />
+    <None Include=".git\logs\HEAD" />
+    <None Include=".git\logs\refs\heads\master" />
+    <None Include=".git\logs\refs\remotes\origin\HEAD" />
+    <None Include=".git\objects\pack\pack-1a1b7d5da62bbcb459006476a15b63f91574e854.idx" />
+    <None Include=".git\objects\pack\pack-1a1b7d5da62bbcb459006476a15b63f91574e854.pack" />
+    <None Include=".git\packed-refs" />
+    <None Include=".git\refs\heads\master" />
+    <None Include=".git\refs\remotes\origin\HEAD" />
+    <None Include=".vs\ProjectSettings.json" />
+    <None Include=".vs\slnx.sqlite" />
+    <None Include=".vs\source\config\applicationhost.config" />
+    <None Include=".vs\source\v16\.suo" />
+    <None Include=".vs\tasks.vs.json" />
+    <None Include=".vs\VSWorkspaceState.json" />
+    <None Include="common.rsp" />
+    <EmbeddedResource Include="glade\ambientsoundparameters.glade" />
+    <EmbeddedResource Include="glade\goto.glade" />
+    <EmbeddedResource Include="glade\levelparameters.glade" />
+    <EmbeddedResource Include="glade\lightparameters.glade" />
+    <EmbeddedResource Include="glade\lineparameters.glade" />
+    <EmbeddedResource Include="glade\macmapwindow.glade" />
+    <EmbeddedResource Include="glade\mapwindow.glade" />
+    <EmbeddedResource Include="glade\mediaparameters.glade" />
+    <EmbeddedResource Include="glade\platformparameters.glade" />
+    <EmbeddedResource Include="glade\pointparameters.glade" />
+    <EmbeddedResource Include="glade\preferences.glade" />
+    <EmbeddedResource Include="glade\randomsoundparameters.glade" />
+    <None Include="icons\Weland.icns" />
+    <None Include="mac\Info.plist" />
+    <None Include="mac\weland.sh" />
+    <None Include="weland.rsp" />
+    <None Include="windows.rsp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="COPYING.txt" />
+    <Content Include="icons\Weland.ico" />
+    <Content Include="icons\Weland_256x256.png" />
+    <EmbeddedResource Include="images\1x.png" />
+    <EmbeddedResource Include="images\2x.png" />
+    <EmbeddedResource Include="images\3x.png" />
+    <EmbeddedResource Include="images\alien-gun.png" />
+    <EmbeddedResource Include="images\ambient-sound.png" />
+    <EmbeddedResource Include="images\annotation.png" />
+    <EmbeddedResource Include="images\ar-ammo.png" />
+    <EmbeddedResource Include="images\ar-grenades.png" />
+    <EmbeddedResource Include="images\ar.png" />
+    <EmbeddedResource Include="images\arrow.png" />
+    <EmbeddedResource Include="images\ceiling-height.png" />
+    <EmbeddedResource Include="images\ceiling-light.png" />
+    <EmbeddedResource Include="images\ceiling-texture.png" />
+    <EmbeddedResource Include="images\custom-grid.png" />
+    <EmbeddedResource Include="images\dingle.png" />
+    <EmbeddedResource Include="images\fill.png" />
+    <EmbeddedResource Include="images\flag.png" />
+    <EmbeddedResource Include="images\floor-height.png" />
+    <EmbeddedResource Include="images\floor-light.png" />
+    <EmbeddedResource Include="images\floor-texture.png" />
+    <EmbeddedResource Include="images\flower.png" />
+    <EmbeddedResource Include="images\fusion-ammo.png" />
+    <EmbeddedResource Include="images\fusion.png" />
+    <EmbeddedResource Include="images\grid.png" />
+    <EmbeddedResource Include="images\invinc.png" />
+    <EmbeddedResource Include="images\keycard.png" />
+    <EmbeddedResource Include="images\line.png" />
+    <EmbeddedResource Include="images\liquids.png" />
+    <EmbeddedResource Include="images\media-light.png" />
+    <EmbeddedResource Include="images\monster.png" />
+    <EmbeddedResource Include="images\move.png" />
+    <EmbeddedResource Include="images\object.png" />
+    <EmbeddedResource Include="images\oxygen.png" />
+    <EmbeddedResource Include="images\pistol-ammo.png" />
+    <EmbeddedResource Include="images\pistol.png" />
+    <EmbeddedResource Include="images\player.png" />
+    <EmbeddedResource Include="images\polygon-type.png" />
+    <EmbeddedResource Include="images\powerup.png" />
+    <EmbeddedResource Include="images\random-sound.png" />
+    <EmbeddedResource Include="images\rl-ammo.png" />
+    <EmbeddedResource Include="images\rl.png" />
+    <EmbeddedResource Include="images\shotgun-ammo.png" />
+    <EmbeddedResource Include="images\shotgun.png" />
+    <EmbeddedResource Include="images\skull.png" />
+    <EmbeddedResource Include="images\smg-ammo.png" />
+    <EmbeddedResource Include="images\smg.png" />
+    <EmbeddedResource Include="images\snap.png" />
+    <EmbeddedResource Include="images\sound.png" />
+    <EmbeddedResource Include="images\tozt-ammo.png" />
+    <EmbeddedResource Include="images\tozt.png" />
+    <EmbeddedResource Include="images\uplink-chip.png" />
+    <EmbeddedResource Include="images\zoom.png" />
+    <Content Include="README.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include=".git\objects\info\" />
+    <Folder Include=".git\refs\tags\" />
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+  <Target Name="ModifyEmbeddedResourceNames" BeforeTargets="CreateManifestResourceNames">
+    <!-- from https://stackoverflow.com/questions/44271491/how-to-change-the-generated-manifestresourcename-for-embedded-resources -->
+    <ItemGroup>
+      <EmbeddedResource>
+        <LogicalName>%(Filename)%(Extension)</LogicalName>
+      </EmbeddedResource>
+    </ItemGroup>
+  </Target>
+</Project>
